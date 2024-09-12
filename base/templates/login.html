@@ -1,0 +1,80 @@
+{% extends 'main.html' %} {% load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" />
+{%endblock style%} {% block content %}
+
+<main class="main__container">
+  <section class="login__section">
+    <h1>Login</h1>
+    {% if error.type == 'login' %}
+    <span class="validation__err" style="margin-left: 1em">
+      {{error.message}}
+    </span>
+    {% endif %}
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="input__container">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email_login" />
+        <span class="err__hidden validation__err" id="err_email_login"
+          >Please enter a valid email</span
+        >
+      </div>
+      <div class="input__container">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password_login"
+          minlength="6"
+        />
+        <span
+          class="err__hidden validation__err"
+          id="err_password_login"
+        ></span>
+      </div>
+      <input type="hidden" value="login" name="type" />
+      <button type="submit">Login</button>
+    </form>
+  </section>
+  <section class="register__section">
+    <h1>Sign-in</h1>
+    {% if error.type == 'signup' %}
+    <span class="validation__err" style="margin-left: 1em">
+      {{ error.message }}
+    </span>
+    {%endif%}
+    <form action="/pages/signup" method="POST">
+      {% csrf_token %} {% for field in form %}
+      <div class="input__container">
+        <label>{{field.label}}</label>
+        {{field}}
+        <span class="err__hidden validation__err" id="err_email_signup"
+          >Please enter a valid email</span
+        >
+      </div>
+      {% endfor %}
+      <input type="hidden" value="singup" name="type" />
+      <button type="submit">Sign in</button>
+    </form>
+  </section>
+</main>
+
+{%endblock content%} {% comment %}
+<div class="input__container">
+  <label for="email">Email</label>
+  <input type="email" name="email" id="email_signup" />
+  <span class="err__hidden validation__err" id="err_email_signup"
+    >Please enter a valid email</span
+  >
+</div>
+<div class="input__container">
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password_signup" minlength="6" />
+  <span class="err__hidden validation__err" id="err_password_signup"></span>
+</div>
+<div class="input__container">
+  <label for="confirm">Confirm your password</label>
+  <input type="password" name="confirm" id="confirm_signup" minlength="6" />
+  <span class="err__hidden validation__err" id="err_confirm_signup"></span>
+</div>
+{% endcomment %}

@@ -1,0 +1,97 @@
+{% extends 'main.html'%} {%load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{%endblock style%} {% block content %}
+<main>
+  <section class="hero__section">
+    <div class="hero__text">
+      <span>
+        <h1>Natural</h1>
+      </span>
+      <span>
+        <h1>Eco</h1>
+      </span>
+      <span class="highlighted">
+        <h1>Unique.</h1>
+      </span>
+      <p>We're reinventing the fragrance experience</p>
+    </div>
+    <img src="{% static 'images/woman_two.png' %}" alt="" />
+  </section>
+  <section class="eco__section">
+    <img src="{% static 'images/eco_img.png' %}" alt="" />
+    <div class="eco__section__text">
+      <h1>Ecology</h1>
+      <p>
+        We strive to produce in balance with nature. We work closely with small
+        producers to ensure ecological practices and the quality of our
+        products.
+      </p>
+    </div>
+  </section>
+  <section class="production__section">
+    <div>
+      <h1>Natural.</h1>
+      <p>
+        Our fragances are produced from naturally sourced ingredients. We offer
+        to most realistic experience with the quality and longevity of standard
+        perfumes.
+      </p>
+      <a href="/pages/shop">
+        <button id="shop-redirect">BUY</button>
+      </a>
+    </div>
+  </section>
+  <section class="gallery__section" id="gallery">
+    <div class="product__card one">
+      <img src="{% static 'images/blue_perfumes.jpg' %}" alt="" />
+      <div class="overlay overlay--one"></div>
+    </div>
+    <div class="product__card two">
+      <img src="{% static 'images/brown_perfumes.jpg' %}" alt="" />
+      <div class="overlay overlay--two"></div>
+    </div>
+    <div class="product__card three">
+      <img src="{% static 'images/caramel_perfumes.jpg' %}" alt="" />
+      <div class="overlay overlay--three"></div>
+    </div>
+    <div class="product__card four">
+      <img src="{% static 'images/grey_perfumes.jpg' %}" alt="" />
+      <div class="overlay overlay--four"></div>
+    </div>
+    <div class="product__card five">
+      <img src="{% static 'images/green_perfumes.jpg' %}" alt="" />
+      <div class="overlay overlay--five"></div>
+    </div>
+    <div class="product__card six">
+      <img src="{% static 'images/orange_perfumes.jpg' %}" alt="" />
+      <div class="overlay overlay--six"></div>
+    </div>
+    <div class="product__card seven">
+      <img src="{% static 'images/purple_perfumes.jpg' %}" alt="" />
+      <div class="overlay overlay--seven"></div>
+    </div>
+    <div class="product__card eight">
+      <img src="{% static 'images/red_perfumes.jpg' %}" alt="" />
+      <div class="overlay overlay--eight"></div>
+    </div>
+    <div class="product__card nine">
+      <img src="{% static 'images/rose_perfumes.jpg' %}" alt="" />
+      <div class="overlay overlay--nine"></div>
+    </div>
+  </section>
+  <section class="about__section" id="about">
+    <img src="{%  static 'images/farmers.jpg' %}" alt="" />
+
+    <h1>Our Team.</h1>
+    <p>
+      We are a professional team of chemists with years of industry experience
+      working together with family farms that prioritize agroecology and the
+      quality of their produce. Our story started in 2015, and in those 9 years
+      we've helped over 150.000 costumers express their identity and stand out
+      through their scent.
+    </p>
+
+    <img src="{% static 'images/chemists.jpg' %}" alt="" />
+  </section>
+</main>
+{% endblock content %}

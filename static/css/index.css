@@ -1,0 +1,105 @@
+* {
+  font-family: "Geologica", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+header {
+  background-color: #fae5c6;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 0.5em;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  color: rgb(36, 155, 36);
+  z-index: 5;
+}
+
+header a {
+  text-decoration: none;
+  color: rgb(36, 155, 36);
+  width: fit-content;
+}
+
+header a:visited {
+  color: rgb(36, 155, 36);
+}
+
+.white-background {
+  background-color: white;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-family: "Unbounded", sans-serif;
+}
+
+nav ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 5em));
+  margin: 0;
+  justify-content: end;
+  padding: 0;
+  font-size: 1.2rem;
+  align-items: center;
+  gap: 2em;
+}
+
+nav ul > *:hover {
+  cursor: pointer;
+}
+
+.cart__link {
+  position: relative;
+}
+
+.cart__link span + span {
+  background-color: #fae5c6;
+  padding: 0.2em 0.5em;
+  border-radius: 50%;
+  font-size: 0.6rem;
+  position: absolute;
+  left: 1.5em;
+}
+
+.shopping__bag {
+  font-size: 2rem;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  align-items: center;
+  background-color: rgb(36, 155, 36);
+  color: white;
+  font-size: 1rem;
+  padding: 0.5em;
+}
+
+footer a {
+  color: white;
+}
+
+footer div {
+  text-align: end;
+}
+
+footer i {
+  font-size: 1.5rem;
+  padding: 0.2em;
+}
+
+footer i:hover {
+  cursor: pointer;
+}

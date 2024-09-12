@@ -1,0 +1,51 @@
+<header id="header">
+  <span class="logo"> NEU </span>
+
+  {% if page == 'home' %}
+  <nav>
+    <ul>
+      <a href="#about">
+        <li>About us</li>
+      </a>
+      <a href="#gallery">
+        <li>Products</li>
+      </a>
+      <a href="{% url 'shop' %}">
+        <li>Shop</li>
+      </a>
+    </ul>
+  </nav>
+  {%endif %} {% if page == 'shop' %}
+  <nav>
+    <ul>
+      {% if request.user.is_authenticated %}
+      <a href="/pages/login">
+        <li>Login/Register</li>
+      </a>
+      {% else %}
+      <form action="/logout" method="POST" name="logout-form" id="logout-form">
+        <li id="logout__btn">Logout</li>
+      </form>
+      {% endif %}
+      <a href="#">
+        <li class="cart__link">
+          <span class="material-symbols-outlined shopping__bag">
+            shopping_bag
+          </span>
+          {% if cart > 0 %}
+          <span> <%= cart %> </span>
+          {% endif %}
+        </li>
+      </a>
+    </ul>
+  </nav>
+  {% endif %} {% if page == 'login' %}
+  <nav>
+    <ul>
+      <a href="{% url 'shop' %}">
+        <li>Shop</li>
+      </a>
+    </ul>
+  </nav>
+  {% endif %}
+</header>
